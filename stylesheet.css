@@ -1,0 +1,63 @@
+.content {
+    background-color: #FFD64D;
+    margin: 0 auto;
+    width: 750px;
+    text-align: left;
+    padding: 40px;
+    width: 720px;
+}
+
+.page {
+    background: linear-gradient(#F52549, #FA6775);
+    text-align: center;
+}
+
+h1 {
+    color: #9BC01C;
+}
+
+.title {
+    text-align: center;
+}
+
+.subtitle {
+    text-align: center;
+}
+
+.nav {
+    text-align: center;
+}
+
+#artifact {
+    margin-left: 180px;
+    margin-top: 50px;
+    width: 400px;
+}
+
+.chat {
+    margin: 0 auto;
+    width: 750px;
+    text-align: left;
+
+}
+
+#pic {
+    width: 300px;
+}
+
+#pic2 {
+    width: 300px;
+}
+
+#pic3 {
+    width: 300px;
+}
+
+p {
+    font-family: 'Bowlby One SC', cursive;
+
+}
+
+#pic4 {
+    width: 300px;
+}

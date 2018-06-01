@@ -1,0 +1,58 @@
+<html>
+
+<head>
+    <link href="stylesheet.css" rel="stylesheet" />
+    <script src="https://code.jquery.com/jquery-2.2.4.min.js"></script>
+    <script type="text/javascript" src="script.js">
+    </script>
+    <title>Capstone Site</title>
+</head>
+
+<body>
+    <div class="page">
+        <div class="content">
+            <h1 class="title">Enrique Site</h1>
+            <h2 class="subtitle">AP Create Task</h2>
+            <div class="nav">
+                <a class="nav-items" href="index.html">Home</a>
+                <a class="nav-items" href="strength.html">Strengths</a>
+                <a class="nav-items" href="ap-create.html">AP Create Task</a>
+                <a class="nav-items" href="ap-explore.html">Ap Explore Task</a>
+                <a class="nav-items" href="college.html">College</a>
+                <a class="nav-items" href="research.html">Research</a>
+            </div>
+
+            <h3>2A)</h3>
+            <p> My program is written using javascript. My code was created using the Glitch development environment. Javascript is used to make the page look like a quiz or trivia. The purpose of my program is to take a quiz about random true or false questions.
+                The point is to take a mini trivia to answer true or false questions. In the video clip, you can see the process of answering the questions till the end of the quiz
+
+            </p>
+
+            <h3>2B)</h3>
+            <p>I worked on this task independently. I first got stuck when I needed to show the dialogue in the quiz. When I first created my program, all of the code for the questions to pop up in the quiz were not being displayed. This made it hard to
+                know if the questions were true or false if they were not being shown. I solved this challenge by breaking apart my code . For example we had gotten confused because most of our functions had the word question in it which made it difficult
+                to organize it. The second challenge I ran into was having the options true and false. It was going to be difficult to answer the quiz if you did not have true or false displayed . This problem was hard because I wanted to show the options
+                true and false. To make this happen i had use javascript to put the code option as a function to then be displayed on screen. The buttons then made everything connect.
+
+            </p>
+            <p><b>2C)</b>
+                <pre><code>  let answer= selectedOption.value;
+  if(questions[currentQuestion].answer==answer)
+{
+    score +=10;
+}
+  selectedOption.checked=false;
+  currentQuestion++;
+  if(currentQuestion==totalQuestions-1)
+  {
+    newButton.textContent="Finish";
+</code></pre> The purpose of this algorithm is to let the person taking the quiz know that the quiz is about to end. When this code runs, it changes the button saying next page to “finish”.This algorithm uses the totalQuestion() and currentQuestion()
+                functions which are also algorithms. The currentQuestion() is there to let you know the quiz is about to end by displaying it on the button. The totalQuestion() function lets current question know there is no more questions to be displayed.
+                Together means that the quiz is not going to show a next question but tell you its about to end . This decreases my program’s complexity by it having an ending and not an on going quiz that has no ending. For example, a message pops up
+                giving you your score. If I had not created this algorithm, the quiz would never let you know your score.
+                <iframe src="create/index.html" width="1000" height="500" />
+        </div>
+    </div>
+</body>
+
+</html>

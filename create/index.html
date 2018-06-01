@@ -1,0 +1,197 @@
+<html>
+
+<head>
+    <title>true or false</title>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="/styles.css">
+</head>
+
+<body>
+    <div id="triviaContainer" class="container">
+        <div class="title">true or false</div>
+        <div id="question" class="question"></div>
+        <label class="option"><input type="radio" name="mx" value="1"/> <span id="opt1"></span></label>
+        <label class="option"><input type="radio" name="mx" value="2"/> <span id="opt2"></span></label>
+
+        <button id="newButton" class="next-que" onclick="showNewQuestion();"> Next Question</button>
+    </div>
+    <div id="result" class="container result" style="display:none;"></div>
+    <script src="trivia.js"></script>
+</body>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
+<style type="text/css">
+    body {
+        font-family: "Comic Sans MS", cursive, sans-serif;
+        background: #ffffff;
+    }
+
+    .container {
+        height: 330px;
+        width: 1000px;
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translateX(-50%) translateY(-50%);
+        background: rgb(255, 255, 255);
+        padding: 20px;
+        border: 2px solid #00e5ff;
+        box-shadow: 0 0 8px 3px #fffff;
+
+    }
+
+    .title {
+        padding-top: 30px;
+        text-align: center;
+        font-size: 40px;
+        text-transform: uppercase;
+        color: #00e5ff;
+    }
+
+    .question {
+        padding: 20px;
+        font-size: 22px;
+        background: #00e5ff;
+        border-radius: 30px;
+        margin: 10px 0 10px 0;
+        color: #ffffff;
+    }
+
+    .option {
+        width: 470px;
+        display: inline-block;
+        padding: 10px 0 10px 15px;
+        vertical-align: middle;
+        background: rgb(0, 229, 255);
+        margin: 10px 0 10px 0;
+        color: #FEFEFE;
+        border-radius: 30px;
+    }
+
+    .option:hover {
+        background: #0099ff;
+        color: #FEFEFE;
+    }
+
+    .next-que {
+        background: #fffff;
+        width: 100px;
+        height: 35px;
+        border-radius: 20px;
+        cursor: pointer;
+        float: right;
+        margin: 10px;
+    }
+
+    .next-que:hover {
+        background: #00e5ff;
+        color: #Fffff;
+    }
+
+    .result {
+        height: 100px;
+        text-align: center;
+        font-size: 75px;
+    }
+
+    .option input:checked .option {
+        background: #FE0D0D;
+        color: #000;
+    }
+</style>
+<script type="text/javascript">
+    let questions = [{
+        "question": "Is Obama still going out with Michelle?",
+        "option1": "True",
+        "option2": "False",
+        "answer": "1"
+    }, {
+        "question": "Was Arnold Schwarzenegger a governer?",
+        "option1": "True",
+        "option2": "False",
+        "answer": "1"
+    }, {
+        "question": "Was Donald Trump an actor?",
+        "option1": "True",
+        "option2": "False",
+        "answer": "1"
+    }, {
+        "question": "Mc donalds is healthy?",
+        "option1": "True",
+        "option2": "False",
+        "answer": "2"
+    }, {
+        "question": "WW3 is going to start?",
+        "option1": "True",
+        "option2": "False",
+        "answer": "2"
+    }, {
+        "question": "Hitler is alive?",
+        "option1": "True",
+        "option2": "False",
+        "answer": "2"
+    }, {
+        "question": "Murder is a crime?",
+        "option1": "True",
+        "option2": "False",
+        "answer": "1"
+    }, {
+        "question": "the rainbow has 5 colors?",
+        "option1": "True",
+        "option2": "False",
+        "answer": "2"
+    }];
+
+    let currentQuestion = 0;
+    let score = 0;
+
+
+    let totalQuestions = questions.length;
+
+    let container = document.getElementById("triviaContainer");
+    let question = document.getElementById("question");
+    let opt1 = document.getElementById("opt1");
+    let opt2 = document.getElementById("opt2");
+    let opt3 = document.getElementById("opt3");
+    let opt4 = document.getElementById("opt4");
+    let newButton = document.getElementById("newButton");
+    let resultCont = document.getElementById("result");
+
+    function loadQuestion(questionIndex) {
+        let q = questions[questionIndex];
+        question.textContent = (questionIndex + 1) + "." + q.question;
+        opt1.textContent = q.option1;
+        opt2.textContent = q.option2;
+        opt3.textContent = q.option3;
+        opt4.textContent = q.option4;
+    }
+
+    function showNewQuestion() {
+        let selectedOption = document.querySelector("input[type=radio]:checked");
+        if (!selectedOption) {
+            alert("Please choose your answer!");
+            return;
+        }
+        let answer = selectedOption.value;
+        if (questions[currentQuestion].answer == answer) {
+            score += 10;
+        }
+        selectedOption.checked = false;
+        currentQuestion++;
+        if (currentQuestion == totalQuestions - 1) {
+            newButton.textContent = "Finish";
+        }
+        if (currentQuestion == totalQuestions) {
+            container.style.display = "none";
+            resultCont.style.display = "";
+            resultCont.textContent = "Your Score " + score + " out of 80";
+            return;
+        }
+        loadQuestion(currentQuestion);
+    }
+
+    loadQuestion(currentQuestion);
+</script>
+
+</html>
